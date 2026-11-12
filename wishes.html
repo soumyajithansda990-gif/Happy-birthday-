@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ইরিলিং কুড়ি 🎂</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Georgia, serif;
+    color: white;
+    overflow: hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url("dada.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    width: 90%;
+    max-width: 550px;
+    padding: 30px 22px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 25px;
+    background: rgba(20, 10, 40, 0.65);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 35px rgba(255, 190, 11, 0.5);
+    animation: zoom 1.2s ease;
+    z-index: 2;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #ffd166;
+    font-size: clamp(30px, 7vw, 48px);
+    margin: 15px 0;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff006e; }
+    to { text-shadow: 0 0 30px #ffd166; }
+}
+
+.cake {
+    font-size: 65px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 18px 0;
+}
+
+.name {
+    color: #ffcf56;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 15px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 30px;
+    background: #ffbe0b;
+    color: #24113e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.balloon {
+    position: fixed;
+    bottom: -80px;
+    font-size: 40px;
+    animation: fly 9s linear infinite;
+    z-index: 1;
+}
+
+@keyframes fly {
+    to { transform: translateY(-120vh) rotate(25deg); }
+}
+
+.confetti {
+    position: fixed;
+    top: -15px;
+    width: 9px;
+    height: 14px;
+    animation: fall 4s linear forwards;
+    z-index: 5;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="cake">🎂🎉</div>
+
+    <h1>Happy Birthday!</h1>
+
+    <div class="name">Dear ইরিলিং কুড়ি ❤️</div>
+
+    <p>
+        Wishing you a very Happy Birthday! 🥳<br><br>
+
+        May your life always be filled with happiness,
+        success, good health and endless blessings.<br><br>
+
+        May all your dreams come true.
+        Keep smiling and shining always! ✨<br><br>
+
+        You are truly special. Have an amazing day!
+    </p>
+
+    <h2>🎈 Many Many Happy Returns of the Day! 🎈</h2>
+
+    <button onclick="playMusic()">🎵 Play Birthday Music</button>
+
+</div>
+
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("music");
+    music.play().catch(() => {
+        alert("Please try tapping the music button again.");
+    });
+}
+
+function createConfetti() {
+    for (let i = 0; i < 100; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.backgroundColor =
+            ["#ff006e", "#ffd166", "#06d6a0", "#ffffff"]
+            [Math.floor(Math.random() * 4)];
+
+        piece.style.animationDelay = Math.random() * 2 + "s";
+
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 6000);
+    }
+}
+
+setInterval(() => {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.innerHTML = ["🎈", "🎉", "🎊"][Math.floor(Math.random() * 3)];
+    balloon.style.left = Math.random() * 95 + "vw";
+
+    document.body.appendChild(balloon);
+    setTimeout(() => balloon.remove(), 10000);
+}, 1000);
+
+createConfetti();
+</script>
+
+</body>
+</html>
