@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Birthday Gift 🎁</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #10002b, #3c096c, #7209b7);
+    overflow: hidden;
+}
+
+.container {
+    padding: 25px;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gift {
+    font-size: 75px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-15px); }
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    color: #ffd166;
+    margin: 20px 0;
+    text-shadow: 0 0 20px #ff70a6;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #eee;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 16px 25px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #ff006e, #ffbe0b);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ff006e;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.date {
+    color: #ffd166;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="gift">🎁</div>
+
+    <div class="date">12 NOVEMBER</div>
+
+    <h1>A Special Day For You!</h1>
+
+    <p>
+        Some days are special,<br>
+        Some people are special,<br>
+        And today is all about YOU! ❤️<br><br>
+
+        I have prepared a little surprise.<br>
+        Are you ready to open your gift?
+    </p>
+
+    <button onclick="openGift()">
+        🎁 CLICK HERE FOR BIRTHDAY GIFT
+    </button>
+
+</div>
+
+<script>
+function openGift() {
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>
